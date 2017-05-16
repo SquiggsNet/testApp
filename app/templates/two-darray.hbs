@@ -1,0 +1,93 @@
+<div class="col-sm-12">
+<h1>2-D Array Generator</h1>
+</div>
+<form class="col-sm-4">
+  <div class="form-group">
+    <label>Select values to generate the array</label>
+  </div>
+    <div class="form-group">
+        {{#x-select action='selectAlpha' id="alpha-one-select"  value=model.alpha}}
+            {{#each alphas as |bet|}}
+                {{#x-option value=bet}}
+                    {{bet}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+
+        {{#x-select action='selectNum' id="num-one-select"  value=model.num}}
+            {{#each nums as |ber|}}
+                {{#x-option value=ber}}
+                    {{ber}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+  </div>
+  <div class="form-group">
+  {{#x-select action='selectAlpha' id="alpha-two-select"  value=model.alpha}}
+            {{#each alphas as |bet|}}
+                {{#x-option value=bet}}
+                    {{bet}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+
+        {{#x-select action='selectNum' id="num-two-select"  value=model.num}}
+            {{#each nums as |ber|}}
+                {{#x-option value=ber}}
+                    {{ber}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+  </div>
+  <div class="form-group">
+        {{#x-select action='selectAlpha' id="alpha-three-select"  value=model.alpha}}
+            {{#each alphas as |bet|}}
+                {{#x-option value=bet}}
+                    {{bet}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+
+        {{#x-select action='selectNum' id="num-three-select"  value=model.num}}
+            {{#each nums as |ber|}}
+                {{#x-option value=ber}}
+                    {{ber}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+  </div>
+  <div class="form-group">
+  {{#x-select action='selectAlpha' id="alpha-four-select"  value=model.alpha}}
+            {{#each alphas as |bet|}}
+                {{#x-option value=bet}}
+                    {{bet}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+
+        {{#x-select action='selectNum' id="num-four-select"  value=model.num}}
+            {{#each nums as |ber|}}
+                {{#x-option value=ber}}
+                    {{ber}}
+                {{/x-option}}
+            {{/each}}
+        {{/x-select}}
+  </div>
+  <button {{action 'generateArray'}} class="btn btn-primary">Generate 2-D Array</button>
+</form>
+<div class="col-sm-4">
+    <div class="form-group">
+        <label>Preview</label>
+    </div>
+    <div class="form-group">
+        {{textarea
+            rows=6
+            col=6
+            readonly=true
+            value="Lots of static text that ISN'T bound"}}
+    </div>
+
+</div>
+<div class="col-sm-4">
+    {{outlet}}
+</div>
