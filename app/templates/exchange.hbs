@@ -22,9 +22,12 @@
                         {{/each}}
                 </tbody> 
         </table>
-        {{#link-to 'exchange.generate' class='btn btn-success'}}Generate Exchange{{/link-to}}
+        <button {{action 'generateExchange' model.person}} class="btn btn-success">Generate Exchange</button>
+        {{!--{{#link-to 'exchange.generate' class='btn btn-success'}}Generate Exchange{{/link-to}}--}}
 </div>
 <div class="col-sm-7">
         {{outlet}}
 </div>
-
+<div class="col-sm-12">
+        {{exchangResults}}
+</div>
