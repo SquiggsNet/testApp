@@ -4,7 +4,7 @@ const { get, set, computed } = Ember;
 
 export default Ember.Controller.extend({
 
-  exchangeGenerated: false,
+//   exchangeGenerated: "",
 
   actions: {
         deletePerson: function(id){
@@ -23,6 +23,7 @@ export default Ember.Controller.extend({
             let senders = [];
             let receivers = [];
             let match=true;
+            var self = this;
 
             participants.map(function(model){
                 senders.pushObject(model.get('name'));
@@ -43,16 +44,31 @@ export default Ember.Controller.extend({
                 });
 	        }
 
-            // this.toggleProperty('exchangeGenerated');
+            console.log(senders);
+            console.log(receivers);
+
+            jQuery.each(participants, function(i, value){
+                console.log(participants[i]);
+                //update person's receiver
+                this.store.findRecord('person', participants[i].id).then(function(person){
+                    person.set('receiver', receivers[i]);
+                    person.save();
+
+                    self.transitionToRoute('exchange.generate');
+                });
+            });
+            
+
+            // this.set('exchangeGenerated', senders);
         }
 
-    },
-    exchangResults: computed('exchangeGenerated',function () {
-       
+    }//,
+//     exchangeResults: computed('exchangeGenerated',function () {
+//         console.log(exchangeGenerated);
+//         return get(this, 'exchangeGenerated') ?
+      
+//             "blue" :
+//             'Click Generate Exchange to see who will be giving a beer to who.';
 
-        return get(this, 'exchangeGenerated') ?
-            'This is what is displayed when proper results are generated' :
-            'Click Generate Exchange to see who will be giving a beer to who.';
-
-  })
+//   })
 });
