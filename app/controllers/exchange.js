@@ -44,11 +44,7 @@ export default Ember.Controller.extend({
                 });
 	        }
 
-            console.log(senders);
-            console.log(receivers);
-
             jQuery.each(participants, function(i, value){
-                console.log(participants[i]);
                 //update person's receiver
                 this.store.findRecord('person', participants[i].id).then(function(person){
                     person.set('receiver', receivers[i]);
@@ -57,18 +53,7 @@ export default Ember.Controller.extend({
                     self.transitionToRoute('exchange.generate');
                 });
             });
-            
-
-            // this.set('exchangeGenerated', senders);
         }
 
-    }//,
-//     exchangeResults: computed('exchangeGenerated',function () {
-//         console.log(exchangeGenerated);
-//         return get(this, 'exchangeGenerated') ?
-      
-//             "blue" :
-//             'Click Generate Exchange to see who will be giving a beer to who.';
-
-//   })
+    }
 });
