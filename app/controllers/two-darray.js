@@ -13,8 +13,19 @@ export default Ember.Controller.extend({
     berFour: '9',
     alphas: Ember.String.w('a b c d e f g h i j k l m n o p q r s t u v w z y z'),
     nums: Ember.String.w('0 1 2 3 4 5 6 7 8 9'),
-    areaInput: "a,6\nb,2\nc,8\nd,9",
     twoDArrayResults: "click to generate results",
+
+    areaInput: computed('betOne','betTwo','betThree','betFour','berOne','berTwo','berThree','berFour', function () {
+        var textArea = "";
+        textArea += this.get('betOne')+","+this.get('berOne')+"\n";
+        textArea += this.get('betTwo')+","+this.get('berTwo')+"\n";
+        textArea += this.get('betThree')+","+this.get('berThree')+"\n";
+        textArea += this.get('betFour')+","+this.get('berFour');
+
+        return textArea;
+    }),
+
+
     actions: {
         selectAlphaOne(bet) {
             this.set('betOne', bet);
@@ -31,7 +42,7 @@ export default Ember.Controller.extend({
         selectNumOne(ber) {
             this.set('berOne', ber);
         },
-        selectNumTwo(bet) {
+        selectNumTwo(ber) {
             this.set('berTwo', ber);
         },
         selectNumThree(ber) {
