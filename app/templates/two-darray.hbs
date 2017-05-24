@@ -6,80 +6,53 @@
         <label>Select values to generate the array</label>
     </div>
     <div class="form-group">
-        <select onchange={{action (mut vehicle) value="target.value"}}>
+        <select onchange={{action "selectAlphaOne" value="target.value"}}>
             {{#each alphas as |bet|}}
-                <option value={{bet}} selected={{eq vehicle bet}}>{{bet}}</option>
+                <option value={{bet}} selected={{eq betOne bet}}>{{bet}}</option>
+            {{/each}}
+        </select>
+        <select onchange={{action "selectNumOne" value="target.value"}}>
+            {{#each nums as |ber|}}
+                <option value={{ber}} selected={{eq berOne ber}}>{{ber}}</option>
             {{/each}}
         </select>
     </div>
-    
-        {{!--{{#x-select action='selectAlpha' id="alpha-one-select"  value=model.alpha}}
+    <div class="form-group">
+        <select onchange={{action "selectAlphaTwo" value="target.value"}}>
             {{#each alphas as |bet|}}
-                {{#x-option value=bet}}
-                    {{bet}}
-                {{/x-option}}
+                <option value={{bet}} selected={{eq betTwo bet}}>{{bet}}</option>
             {{/each}}
-        {{/x-select}}--}}
-
-        {{!--{{#x-select action='selectNum' id="num-one-select"  value=model.num}}
+        </select>
+        <select onchange={{action "selectNumTwo" value="target.value"}}>
             {{#each nums as |ber|}}
-                {{#x-option value=ber}}
-                    {{ber}}
-                {{/x-option}}
+                <option value={{ber}} selected={{eq berTwo ber}}>{{ber}}</option>
             {{/each}}
-        {{/x-select}}
-  </div>
-  <div class="form-group">
-  {{#x-select action='selectAlpha' id="alpha-two-select"  value=model.alpha}}
+        </select>
+    </div>
+    <div class="form-group">
+        <select onchange={{action "selectAlphaThree" value="target.value"}}>
             {{#each alphas as |bet|}}
-                {{#x-option value=bet}}
-                    {{bet}}
-                {{/x-option}}
+                <option value={{bet}} selected={{eq betThree bet}}>{{bet}}</option>
             {{/each}}
-        {{/x-select}}
-
-        {{#x-select action='selectNum' id="num-two-select"  value=model.num}}
+        </select>
+        <select onchange={{action "selectNumThree" value="target.value"}}>
             {{#each nums as |ber|}}
-                {{#x-option value=ber}}
-                    {{ber}}
-                {{/x-option}}
+                <option value={{ber}} selected={{eq berThree ber}}>{{ber}}</option>
             {{/each}}
-        {{/x-select}}
-  </div>
-  <div class="form-group">
-        {{#x-select action='selectAlpha' id="alpha-three-select"  value=model.alpha}}
+        </select>
+    </div>
+    <div class="form-group">
+        <select onchange={{action "selectAlphaFour" value="target.value"}}>
             {{#each alphas as |bet|}}
-                {{#x-option value=bet}}
-                    {{bet}}
-                {{/x-option}}
+                <option value={{bet}} selected={{eq betFour bet}}>{{bet}}</option>
             {{/each}}
-        {{/x-select}}
-
-        {{#x-select action='selectNum' id="num-three-select"  value=model.num}}
+        </select>
+        <select onchange={{action "selectNumFour" value="target.value"}}>
             {{#each nums as |ber|}}
-                {{#x-option value=ber}}
-                    {{ber}}
-                {{/x-option}}
+                <option value={{ber}} selected={{eq berFour ber}}>{{ber}}</option>
             {{/each}}
-        {{/x-select}}
-  </div>
-  <div class="form-group">
-  {{#x-select action='selectAlpha' id="alpha-four-select"  value=model.alpha}}
-            {{#each alphas as |bet|}}
-                {{#x-option value=bet}}
-                    {{bet}}
-                {{/x-option}}
-            {{/each}}
-        {{/x-select}}
-
-        {{#x-select action='selectNum' id="num-four-select"  value=model.num}}
-            {{#each nums as |ber|}}
-                {{#x-option value=ber}}
-                    {{ber}}
-                {{/x-option}}
-            {{/each}}
-        {{/x-select}}
-  </div>--}}
+        </select>
+    </div>
 </form>
 <form class="col-sm-4">
     <div class="form-group">
