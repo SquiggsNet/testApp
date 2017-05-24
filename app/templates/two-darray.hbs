@@ -2,19 +2,26 @@
 <h1>2-D Array Generator</h1>
 </div>
 <form class="col-sm-4">
-  <div class="form-group">
-    <label>Select values to generate the array</label>
-  </div>
     <div class="form-group">
-        {{#x-select action='selectAlpha' id="alpha-one-select"  value=model.alpha}}
+        <label>Select values to generate the array</label>
+    </div>
+    <div class="form-group">
+        <select onchange={{action (mut vehicle) value="target.value"}}>
+            {{#each alphas as |bet|}}
+                <option value={{bet}} selected={{eq vehicle bet}}>{{bet}}</option>
+            {{/each}}
+        </select>
+    </div>
+    
+        {{!--{{#x-select action='selectAlpha' id="alpha-one-select"  value=model.alpha}}
             {{#each alphas as |bet|}}
                 {{#x-option value=bet}}
                     {{bet}}
                 {{/x-option}}
             {{/each}}
-        {{/x-select}}
+        {{/x-select}}--}}
 
-        {{#x-select action='selectNum' id="num-one-select"  value=model.num}}
+        {{!--{{#x-select action='selectNum' id="num-one-select"  value=model.num}}
             {{#each nums as |ber|}}
                 {{#x-option value=ber}}
                     {{ber}}
@@ -72,7 +79,7 @@
                 {{/x-option}}
             {{/each}}
         {{/x-select}}
-  </div>
+  </div>--}}
   <button {{action 'generateArray'}} class="btn btn-primary">Generate 2-D Array</button>
 </form>
 <div class="col-sm-4">
@@ -84,7 +91,10 @@
             rows=6
             col=6
             readonly=true
-            value="Lots of static text that ISN'T bound"}}
+            value="a,6
+b,2
+c,8
+d,9"}}
     </div>
 
 </div>

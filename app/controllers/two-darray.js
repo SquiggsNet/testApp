@@ -1,16 +1,25 @@
 import Ember from 'ember';
 
+const { get, set, computed } = Ember;
+
 export default Ember.Controller.extend({
-    alphas: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
-    nums: [0,1,2,3,4,5,6,7,8,9],
-
+    vehicle: null,
+    alphas: Ember.String.w('a b c d e f g h i j k l m n o p q r s t u v w z y z'),
     actions: {
-        selectAlpha(value, component){
-            this.set('model.alpha', value);
-        },
-
-        selectNum(value, component){
-            this.set('model.num', value);
+        selectVehicle(vehicle) {
+            this.set('vehicle', vehicle);
         }
     }
+    // alphas: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+    // nums: [0,1,2,3,4,5,6,7,8,9],
+
+    // actions: {
+    //     selectAlpha(value, component){
+    //         this.set('model.alpha', value);
+    //     },
+
+    //     selectNum(value, component){
+    //         this.set('model.num', value);
+    //     }
+    // }
 });

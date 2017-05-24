@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
-const { get, set, computed } = Ember;
-
 export default Ember.Controller.extend({
-
-//   exchangeGenerated: "",
 
   actions: {
         deletePerson: function(id){
@@ -42,7 +38,7 @@ export default Ember.Controller.extend({
                         return;
                     }
                 });
-	        }
+            }
 
             jQuery.each(participants, function(i, value){
                 //update person's receiver
@@ -54,6 +50,5 @@ export default Ember.Controller.extend({
                 });
             });
         }
-
     }
 });
