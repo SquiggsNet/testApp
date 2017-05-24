@@ -80,24 +80,21 @@
             {{/each}}
         {{/x-select}}
   </div>--}}
-  <button {{action 'generateArray'}} class="btn btn-primary">Generate 2-D Array</button>
 </form>
-<div class="col-sm-4">
+<form class="col-sm-4">
     <div class="form-group">
         <label>Preview</label>
     </div>
     <div class="form-group">
         {{textarea
-            rows=6
-            col=6
+            rows=4
+            col=4
             readonly=true
-            value="a,6
-b,2
-c,8
-d,9"}}
+            value=areaInput}}
     </div>
-
-</div>
+</form>
 <div class="col-sm-4">
-    {{outlet}}
+    <label>Results:</label>
+    <p>{{twoDArrayResults}}</p>
+    <button {{action 'generateArray' areaInput}} class="btn btn-primary">Generate 2-D Array</button>
 </div>

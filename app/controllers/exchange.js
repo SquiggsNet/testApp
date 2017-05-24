@@ -19,7 +19,6 @@ export default Ember.Controller.extend({
             let senders = [];
             let receivers = [];
             let match=true;
-            var self = this;
 
             participants.map(function(model){
                 senders.pushObject(model.get('name'));
@@ -45,10 +44,10 @@ export default Ember.Controller.extend({
                 this.store.findRecord('person', participants[i].id).then(function(person){
                     person.set('receiver', receivers[i]);
                     person.save();
-
-                    self.transitionToRoute('exchange.generate');
                 });
             });
+
+            this.transitionToRoute('exchange.generate');
         }
     }
 });
